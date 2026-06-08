@@ -1,1 +1,8 @@
 node_modules
+.next
+.vscode
+dist
+.env
+data.db
+data.db-journal
+*.log
