@@ -54,7 +54,7 @@ const app = new Elysia()
     return { success: true, data: allResponses };
   })
 
-  .listen(3001);
+  .listen(process.env.PORT || 3001);
 
 console.log(
   `🦊 API is running at ${app.server?.hostname}:${app.server?.port}`
