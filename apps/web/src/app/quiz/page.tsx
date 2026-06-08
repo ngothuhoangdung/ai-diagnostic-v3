@@ -22,7 +22,7 @@ function QuizContent() {
       setCurrentQ(currentQ + 1);
     } else {
       // Gửi data tới ElysiaJS API
-      fetch("http://localhost:3001/api/submit", {
+      fetch("https://web-production-ddf74.up.railway.app/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

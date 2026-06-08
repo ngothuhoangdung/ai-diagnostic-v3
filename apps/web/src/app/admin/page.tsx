@@ -17,7 +17,7 @@ export default function Admin() {
   const [error, setError] = useState('');
   
   useEffect(() => {
-    fetch("http://localhost:3001/api/admin/responses", {
+    fetch("https://web-production-ddf74.up.railway.app/api/admin/responses", {
       headers: {
         "Authorization": "Bearer VIBE_CODING_2026"
       }
