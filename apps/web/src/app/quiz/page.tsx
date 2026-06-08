@@ -2,6 +2,7 @@
 
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useState, Suspense } from 'react';
+import { quizData } from '@/data/questions';
 
 function QuizContent() {
   const searchParams = useSearchParams();
@@ -11,15 +12,8 @@ function QuizContent() {
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   
-  const questions = Array(10).fill(0).map((_, i) => ({
-    title: `Câu hỏi ${i + 1} dành cho ${role}`,
-    options: [
-      "Cách làm thủ công truyền thống (1 điểm)",
-      "Sử dụng AI công cụ đơn lẻ (2 điểm)",
-      "Tích hợp chuỗi công cụ AI (3 điểm)",
-      "Xây dựng hệ thống tự động hoàn toàn (4 điểm)"
-    ]
-  }));
+  const roleKey = role === 'Unknown' ? 'creative' : role;
+  const questions = quizData[roleKey] || quizData['creative'];
 
   const handleSelect = (idx: number) => {
     const newAnswers = [...answers, idx + 1];
