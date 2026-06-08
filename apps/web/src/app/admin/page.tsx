@@ -3,8 +3,17 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+interface ResponseData {
+  id: number;
+  name: string;
+  role: string;
+  total: number;
+  stage: string;
+  createdAt: string;
+}
+
 export default function Admin() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<ResponseData[]>([]);
   const [error, setError] = useState('');
   
   useEffect(() => {
