@@ -1,0 +1,8 @@
+{
+  "name": "ai-diagnostic-v3",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ]
+}
